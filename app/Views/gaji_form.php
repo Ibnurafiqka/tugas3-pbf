@@ -96,7 +96,7 @@
                             <span class="text-green-600">Rp<?= number_format($gaji_bersih, 0, ',', '.') ?></span>
                         </div>
                     </div>
-            <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

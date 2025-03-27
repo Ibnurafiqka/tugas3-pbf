@@ -18,10 +18,8 @@ class GajiController extends Controller
     public function hitungGaji()
     {
         // Ambil input dari form
-        $nama_karyawan = $this->request->getPost('nama');
         $gaji_pokok = $this->request->getPost('gaji_pokok');
         $hari_tidak_hadir = $this->request->getPost('hari_tidak_hadir');
-
 
         if (!is_numeric($gaji_pokok) || !is_numeric($hari_tidak_hadir)) {
             return redirect()->to('/gaji')->with('error', 'Gaji pokok dan hari tidak hadir harus diisi dengan angka')->withInput();
@@ -35,7 +33,6 @@ class GajiController extends Controller
 
         // Kirim hasil ke view
         return view('gaji_form', [
-            'nama_karyawan' => $nama_karyawan,
             'gaji_pokok' => $gaji_pokok,
             'hari_tidak_hadir' => $hari_tidak_hadir,
             'gaji_bersih' => $gaji_bersih
